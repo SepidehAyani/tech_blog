@@ -37,7 +37,7 @@ Given a CMS-style blog site:
 
 ## Project Links
 [Repo Link](https://github.com/SepidehAyani/tech_blog) <br>
-[Deployed Project]()
+[Deployed Project](https://techblogch.herokuapp.com/)
 
 ## Demo
 ##### - the server is started and the Sequelize models are synced to the MySQL database
