@@ -32,20 +32,10 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
-
 // Render login page
 router.get('/login', async (req, res) => {
     try {
         res.render('login');
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-// Render logout page
-router.get('/logout', async (req, res) => {
-    try {
-        res.render('logout');
     } catch (err) {
         res.status(500).json(err);
     }
