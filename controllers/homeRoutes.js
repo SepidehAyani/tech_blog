@@ -42,6 +42,15 @@ router.get('/login', async (req, res) => {
     }
 });
 
+// Render logout page
+router.get('/logout', async (req, res) => {
+    try {
+        res.render('logout');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // Render registration page
 router.get('/register', async (req, res) => {
     try {
@@ -50,7 +59,6 @@ router.get('/register', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 
 // Render newPost page
 router.get('/newPost', async (req, res) => {

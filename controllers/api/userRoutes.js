@@ -42,6 +42,7 @@ router.post('/registerUser', async (req, res) => {
   }
 });
 
+// Logout
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
       req.session.destroy(() => {
@@ -52,7 +53,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-// Cereate a new blog post
+// Create a new blog post
 router.post('/newPost/makePost', async (req, res) => {
   const userData = await User.findOne({ where: { username: req.body.username } });
   if (!userData) {

@@ -39,9 +39,8 @@ Given a CMS-style blog site:
 [Repo Link](https://github.com/SepidehAyani/tech_blog) <br>
 [Deployed Project](https://techblogch.herokuapp.com/)
 
-## Demo
-##### - the server is started and the Sequelize models are synced to the MySQL database
-[![Demo on db and seed](assets/demo.png)](assets/demo-db&seed.mov)
+## Homepage Screenshot
+[![Homepage](assets/homepage.png)
 
 
 ## Instructions
