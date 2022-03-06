@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-
 // Render blog post by id
 router.get('/post/:id', async (req, res) => {
     try {
