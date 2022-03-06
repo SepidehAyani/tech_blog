@@ -3,11 +3,13 @@ const { User, BlogPost, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
+        const loggedIn = req.session.logged_in
+
         const blogPostData = await BlogPost.findAll({
             include: [{ model: User }]
         });
         const blogPost = blogPostData.map((post) => post.get({ plain: true }));
-        res.render('home', { bp: blogPost });
+        res.render('home', { blogPost, loggedIn });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -17,6 +19,8 @@ router.get('/', async (req, res) => {
 // Render blog post
 router.get('/post/:id', async (req, res) => {
     try {
+        const loggedIn = req.session.logged_in
+
         const blogPostData = await BlogPost.findByPk(req.params.id, {
             include: [
                 { model: User },
@@ -25,7 +29,7 @@ router.get('/post/:id', async (req, res) => {
         });
         const blogPost = blogPostData.get({ plain: true });
         console.log(`\n ${blogPost.id} \n`)
-        res.render('post', { bp: blogPost });
+        res.render('post', { blogPost, loggedIn });
 
     } catch (err) {
         res.status(500).json(err);
@@ -34,11 +38,12 @@ router.get('/post/:id', async (req, res) => {
 
 // Render login page
 router.get('/login', async (req, res) => {
-    try {
-        res.render('login');
-    } catch (err) {
-        res.status(500).json(err);
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
     }
+
+    res.render('login');
 });
 
 // Render registration page
@@ -53,7 +58,11 @@ router.get('/register', async (req, res) => {
 // Render newPost page
 router.get('/newPost', async (req, res) => {
     try {
-        res.render('newPost');
+        const loggedIn = req.session.logged_in
+
+        res.render('newPost', {
+            loggedIn
+        });
     } catch (err) {
         res.status(500).json(err);
     }
