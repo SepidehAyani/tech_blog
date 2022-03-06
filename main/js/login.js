@@ -13,7 +13,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/');
-      alert('Successfully login!');
+      alert('Successfully logged-in!');
     } else {
       alert('Please enter a valid username and password');
     }
