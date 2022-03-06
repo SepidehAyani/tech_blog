@@ -40,7 +40,7 @@ Given a CMS-style blog site:
 [Deployed Project](https://techblogch.herokuapp.com/)
 
 ## Homepage Screenshot
-[![Homepage](assets/homepage.png)
+[Homepage](assets/homepage.png)
 
 
 ## Instructions
