@@ -9,7 +9,7 @@ As developer who writes about tech, user wants a CMS-style blog site, so that th
 ## Table of Contents 
 1. [About the Project](#About-The-Project)
 1. [Project Links](#Project-Links)
-1. [Demo](#Demo)
+1. [Homepage Screenshot](#Homepage-Screenshot)
 1. [Installation](#Installation)
 1. [Contribution Guidelines](#Contribution-Guidelines)
 1. [Project Team](#Project-Team)
